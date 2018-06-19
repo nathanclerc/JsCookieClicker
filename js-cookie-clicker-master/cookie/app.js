@@ -2,12 +2,13 @@ var clic =$('#clickme');
 var autoclic=$('#autoclick');
 var div = $('#display');
 var multiply= $('#multiply');
-var bonus = $('#')
+var bonus = $('#bonus');
 var compteur = 1;
 var score = 0;
 var mult= 50;
 var auto = 0;
 var prixauto=200;
+var bobobonus=200;
 
 clic.click( function(){
 	score = score+1 *compteur;
@@ -42,4 +43,21 @@ autoclic.click(function(){
 			alert('Votre score est insuffisant');
 		}
 	div.html(score);
+});
+
+
+bonus.click(function(){
+	if (score>=5000) {
+		score = score-5000;
+		div.html(score);
+		clic.click( function(){
+		score = score + bobobonus;
+		div.html(score);
+		});
+	setTimeout(function(){
+		bobobonus=0;
+	}, 30000);
+}else{
+	alert('Il te faut 5000 de score');
+}
 });
