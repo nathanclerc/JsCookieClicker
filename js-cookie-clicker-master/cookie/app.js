@@ -2,6 +2,7 @@ var clic =$('#clickme');
 var autoclic=$('#autoclick');
 var div = $('#display');
 var multiply= $('#multiply');
+var bonus = $('#')
 var compteur = 1;
 var score = 0;
 var mult= 50;
@@ -31,6 +32,7 @@ autoclic.click(function(){
 	if (score>=500) {
 		auto++;
 		score = score - prixauto;
+		$(this).prop("disabled",true);
 		setInterval(function(){
 			 score = score +auto;
 			 div.html(score);
